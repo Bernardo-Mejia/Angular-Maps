@@ -1,0 +1,35 @@
+<div class="d-flex flex-column">
+  <div class="container w-auto">
+    <div class="col-2"></div>
+    <div class="col">
+      <h1>Lista de propiedades</h1>
+    </div>
+    <hr />
+  </div>
+
+  <div class="container d-flex">
+    <div class="col-2"></div>
+
+    <div class="col">
+      <div class="row">
+        <!-- * ngFor -->
+        <div
+          class="col-lg-4 mb-2"
+          *ngFor="let propiedad of propiedades; let i = index"
+        >
+          <div class="card">
+            <app-mini-mapa
+              [LngLat]="propiedad.lngLat"
+              class="card-img-top"
+            ></app-mini-mapa>
+            <div class="card-body">
+              <h5 class="card-title">{{ propiedad.titulo }}</h5>
+              <p class="card-text">{{ propiedad.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- * ngFor -->
+      </div>
+    </div>
+  </div>
+</div>

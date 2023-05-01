@@ -1,0 +1,17 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-info" (click)="addMarker()">
+    + Add
+  </li>
+  <li
+    class="list-group-item d-flex justify-content-evenly"
+    *ngFor="let marker of markers; let i = index"
+    [ngStyle]="{
+      'background-color': marker.color
+    }"
+  >
+    <div (click)="goToMarker(marker.marker!)">Marker {{ i + 1 }}</div>
+    <div><i class="bi bi-x-square" (click)="deleteMarker(i)"></i></div>
+  </li>
+</ul>
+
+<div #mapa class="mapa-container"></div>
